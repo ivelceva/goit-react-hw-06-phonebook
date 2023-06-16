@@ -80,23 +80,4 @@ export default App;
 
 
 
-  // useEffect(() => {
-  //   const savedContacts = localStorage.getItem(LOCALSTORAGE_KEY);
-  //   if (savedContacts !== null) {
-  //     setContacts(JSON.parse(savedContacts));
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(contacts));
-  // }, [contacts]);
-
-  // const filterContact = (name, filter) => {
-  //   let nameLow = name.toLowerCase();
-  //   let filterLow = filter.toLowerCase();
-  //   return nameLow.indexOf(filterLow) >= 0;
-  // };
-
-  // const contactSearch = contacts.filter(user =>
-  //   filterContact(user.name, filter)
-  // );
+  
