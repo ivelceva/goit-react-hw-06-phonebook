@@ -68,8 +68,8 @@ return (
 };
 
 ContactForm.propTypes = {
-namesContact: PropTypes.arrayOf(PropTypes.string.isRequired),
-addContact: PropTypes.func.isRequired,
+  namesContact: PropTypes.arrayOf(PropTypes.string.isRequired),
+  addContact: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
