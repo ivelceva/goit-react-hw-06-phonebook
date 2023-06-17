@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactSlice';
-// import { getContacts } from 'redux/selectors';
-// import { deleteContact } from '../../redux/contactSlice';
-//import PropTypes from 'prop-types';
 import css from './ContactForm.module.css';
 
 const ContactForm = () => {
@@ -25,7 +22,7 @@ const handleChange = event => {
 const handleSubmit = event => {
   event.preventDefault();
 
-  const result = contacts.some(contact => contact.name === name);
+  const result = contacts.some((contact) => contact.name === name);
   if (result) {
     alert(`${name} is already in contacts`);
     setName('');
@@ -72,11 +69,6 @@ return (
 </form>
 );
 };
-
-// ContactForm.propTypes = {
-//   namesContact: PropTypes.arrayOf(PropTypes.string.isRequired),
-//   addContact: PropTypes.func.isRequired,
-// };
 
 export default ContactForm;
 
