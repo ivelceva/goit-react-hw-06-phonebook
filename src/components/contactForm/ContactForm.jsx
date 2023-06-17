@@ -22,7 +22,7 @@ const handleChange = event => {
 const handleSubmit = event => {
   event.preventDefault();
 
-  const result = contacts.some((contact) => contact.name === name);
+  const result = contacts.find((contact) => contact.name === name);
   if (result) {
     alert(`${name} is already in contacts`);
     setName('');

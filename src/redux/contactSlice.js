@@ -14,16 +14,16 @@ const contactsSlice = createSlice({
   initialState,
   reducers: {
     addContact(state, action) {
-      return state.contacts.push(action.payload);
+      state.contacts.push(action.payload);
     },
     deleteContact(state, action) {
-      return state.contacts = state.contacts.filter(
+      state.contacts = state.contacts.filter(
         (contact) => contact.id !== action.payload
       );
-      //   state.contacts -= action.payload;
     },
   },
 });
+
 
 export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;
