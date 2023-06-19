@@ -1,37 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = '';
-
-const filterSlice = createSlice({
+export const filterSlice = createSlice({
   name: 'filter',
-  initialState,
+  initialState: '',
   reducers: {
     setFilter(state, action) {
-      return state = action.payload;
+      return (state = action.payload);
     },
   },
 });
 
 export const { setFilter } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;
-
-// import { createSlice } from '@reduxjs/toolkit';
-
-// const initialState = {
-//   filter: '',
-// };
-
-// const filterSlice = createSlice({
-//   name: 'filter',
-//   initialState,
-//   reducers: {
-//     filterContacts(state, action) {
-//       state.status = action.payload;
-//     },
-//   },
-// });
-
-// console.log(filterSlice);
-
-// export const filterReducer = filterSlice.reducer;
-// export const { filterContacts } = filterSlice.actions;
