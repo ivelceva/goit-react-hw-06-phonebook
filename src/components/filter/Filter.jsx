@@ -8,8 +8,13 @@ const Filter = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
-   const handleChangeFilter = event => {
-     const value = event.target.value;
+  // const handleChangeFilter = event => {
+  //   const value = event.target.value;
+  //   dispatch(setFilter(value));
+  // };
+
+
+   const handleChangeFilter = ({ target: { value } }) => {
      dispatch(setFilter(value));
    };
 
