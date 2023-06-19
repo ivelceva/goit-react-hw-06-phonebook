@@ -1,23 +1,28 @@
 import UserContact from '../userContact/UserContact';
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from 'redux/selectors';
-import { getFilter } from '../../redux/selectors';
+import { getContacts, getFilter } from 'redux/selectors';
+//import { getFilter } from '../../redux/selectors';
 import { deleteContact } from '../../redux/contactSlice';
 import css from './ContactList.module.css';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
-  const filter = useSelector(getFilter);
+  const filter = useSelector(getFilter) || '';
 
 
-  const filterContact = (name, filter) => {
-    return name.toLowerCase().includes(filter.toLowerCase());
-  };
 
-  const contactSearch = contacts.filter(user => {
-    return filterContact(user.name, filter);
-  });
+   const contactSearch = contacts.filter(user => {
+     const name = user.name || '';
+     return name.toLowerCase().includes(filter.toLowerCase());
+   });
+  // const filterContact = (name, filter) => {
+  //   return name.toLowerCase().includes(filter.toLowerCase());
+  // };
+
+  // const contactSearch = contacts.filter(user => {
+  //   return filterContact(user.name, filter);
+  // });
 
   return (
     <ul className={css.list}>
