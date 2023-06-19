@@ -4,17 +4,27 @@ import { getContacts } from 'redux/selectors';
 import { deleteContact } from '../../redux/contactSlice';
 import css from './ContactList.module.css';
 
-const ContactList = () => {
+const ContactList = ({ filter }) => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
+
+  const filterContact = (name, filter) => {
+    return name.toLowerCase().includes(filter.toLowerCase());
+  };
+
+  const contactSearch = contacts.filter(user => {
+    return filterContact(user.name, filter);
+  });
+
   return (
     <ul className={css.list}>
-      {contacts.map(({ name, number, id }) => (
+      {contactSearch.map(({ name, number, id }) => (
         <li className={css.user} key={id}>
           <UserContact name={name} number={number} />
           <button
             className={css.btn}
-            onClick={() => dispatch(deleteContact(id))}>
+            onClick={() => dispatch(deleteContact(id))}
+          >
             Delete
           </button>
         </li>
